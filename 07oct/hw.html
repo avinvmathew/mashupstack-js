@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+</head>
+<body>
+    <p id="item1"></p>
+    <p id="item2"></p>
+    <p id="item3"></p>
+
+    <h1>Total bill = <span id="bill1"></span>$</h1>
+
+    <p >Updated item : <span id="itemupd"></span></p>
+    <h1>Updated total bill = <span id="bill2"></span>$</h1>
+
+    <script>
+        let item1, item2,item3, price1, price2, price3, qty1, qty2, qty3, cost1, cost2, cost3
+        item1 = "Rice"
+        price1 = 100
+        qty1 = 2
+        item2 = "Sugar"
+        price2 = 200
+        qty2 = 1
+        item3 = "Wheat"
+        price3 = 500
+        qty3 = 5
+
+        cost1 = price1*qty1
+        cost2 = price2*qty2
+        cost3 = price3*qty3
+        total = cost1 + cost2 + cost3
+
+        document.getElementById("item1").innerHTML = item1 + "&nbsp &nbsp &nbsp" + price1 + "&nbsp " + qty1
+        document.getElementById("item2").innerHTML = item2 + "&nbsp &nbsp " + price2 + "&nbsp " + qty2
+        document.getElementById("item3").innerHTML = item3 + "&nbsp &nbsp" + price3 + "&nbsp " + qty3
+        document.getElementById("bill1").innerHTML = total
+        console.log("Total bill = "+total)
+
+        price2 = 250
+        cost2 = price2*qty2
+        total = cost1 + cost2 + cost3
+        document.getElementById("itemupd").innerHTML = item2 + "&nbsp &nbsp" + price2 + "&nbsp " + qty2
+        document.getElementById("bill2").innerHTML = total
+
+
+    </script>
+</body>
+</html>

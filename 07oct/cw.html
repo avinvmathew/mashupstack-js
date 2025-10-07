@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>classwork</title>
 </head>
 <body>
+
+    <h1>Total earnings 1 = <span id="ans1"></span>$</h1>
+    <h1>Total earnings 2 = <span id="ans2"></span>$</h1>
     
+    <script>
+        let no_of_tshirts = 5;
+        let no_of_caps = 3
+        let price_of_tshirt = 400;
+        let price_of_cap = 150;
+        let total = (no_of_caps*price_of_cap)+(no_of_tshirts*price_of_tshirt)
+        document.getElementById("ans1").innerHTML = total
+
+        price_of_tshirt = 450
+        total = (no_of_caps*price_of_cap)+(no_of_tshirts*price_of_tshirt)
+        document.getElementById("ans2").innerHTML = total
+
+
+    </script>
 </body>
 </html>
