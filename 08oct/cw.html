@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <h1 id="el1">Content here...</h1>
+    <button id="bookButton" type="button"">click here</button>
+    <script>
+        let book = {
+            title : "great heights",
+            author : "Shajahan",
+            year : 2008,
+            getSummary : function() {return "The book " + this.title + " was written by " + this.author + " in " + this.year}
+        }
+
+        function bookSummary(bookObj){
+            document.getElementById("el1").innerHTML = bookObj.getSummary() 
+        }
+        bookButton.addEventListener('click', function()
+            {
+                bookSummary(book)
+            }
+        )
+        
+    </script>
+</body>
+</html>
