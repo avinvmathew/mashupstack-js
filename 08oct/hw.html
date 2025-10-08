@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+    <h1 id="el1"></h1>
+    <h1 id="el2"></h1>
+
+
+    <script>
+        const contact1 = {
+                name : "John Doe",
+                phone : 5566889977,
+                email : "johndoe@gmail.com",
+                getInfo : function() {
+                    return "Name : " + this.name + " | " + "Phone : " + this.phone + " | " + "Email : " + this.email
+                }
+            }
+        const contact2 = {
+                name: "Jane Smith",
+                phone: 9988776655,
+                email: "janesmith@yahoo.com",
+                getInfo: function() {
+                    return "Name : " + this.name + " | " + "Phone : " + this.phone + " | " + "Email : " + this.email
+                }
+            }
+        function printContactInfo(contact,element){
+                document.getElementById(element).innerHTML = contact.getInfo()
+            }
+        printContactInfo(contact1,"el1")
+        printContactInfo(contact2,"el2")
+
+    </script>
+</body>
+</html>
