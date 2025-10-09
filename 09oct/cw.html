@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <h1 id="it1"></h1>
+    <h2 id="it2"></h2>
+    <h2 id="it3"></h2>
+    <script>
+        var feedback = "   I loved the FOOD and the service!   ";
+        feedback = feedback.trim();
+        feedback = feedback.toLowerCase();
+        feedback = feedback.replace("food","ambiance");
+        console.log(feedback);
+        document.getElementById("it1").innerHTML = feedback
+        let pos = feedback.search("service");
+        console.log(`Positon of word "service" = ${pos}`)
+        document.getElementById("it2").innerHTML = `Positon of word "service" = ${pos}`
+
+        let arr = feedback.split(" ")
+        document.getElementById("it3").innerHTML = `Array -> ${arr}`
+
+    </script>
+</body>
+</html>
