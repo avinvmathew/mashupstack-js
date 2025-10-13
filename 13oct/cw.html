@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <button id="button1" type="button">Click here!</button>
+    <script>
+
+        let object = {
+            itemName : "Samsung S25", 
+            isDelivered : true,
+            daysSinceDelivery : 6
+        }
+
+        button1.addEventListener('click', ()=>{
+            let del = (object.isDelivered == true && object.daysSinceDelivery < 7) ? "Eligible for Return":"Return Period Expired"
+            console.log(del)
+            let keyex = ("itemName" in object == true) ? "Key exists":"Key does not exist" 
+            console.log(keyex)
+            delete object.daysSinceDelivery
+            console.log("Property deleted")
+
+        })
+
+
+    </script>
+</body>
+</html>
