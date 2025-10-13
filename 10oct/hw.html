@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+    <h1>Game result generator</h1>
+    <button type="button" onclick="RInt(1,50)">Generate number</button><br>
+    <input id="myinput" type="text" placeholder="enter input">
+    <button id="submitButton" type="submit">submit</button>
+    <script>
+
+        let master_lvl
+        function RInt(min,max)
+        {
+            master_lvl = Math.floor(Math.random() * (max-min))+ min
+            console.log(master_lvl)
+        }
+
+        let user_input
+        // const mybutton = document.getElementById('submitButton')
+
+        submitButton.addEventListener('click', () =>
+            {
+                user_input = myinput.value
+                user_input = user_input - 0
+                console.log(`User input = "${user_input}", Type : ${typeof user_input}`)
+                console.log(`value in generated ${master_lvl}`)
+
+                let abs_diff = Math.abs(master_lvl-user_input)
+                console.log(`Absolute difference = ${abs_diff}`)
+
+                console.log(`Log = ${Math.log(user_input)}`)
+                console.log(`square root = ${Math.sqrt(user_input)}`)
+
+                console.log(`Log of pi = ${Math.log(Math.PI)}`)
+
+                let strnn = "20"
+                strnn = strnn * 5
+                console.log(`ex string = "${strnn}", Type : ${typeof strnn}`)
+
+                let noss = [10,20,master_lvl]
+
+                console.log(`MAx is : ${Math.max(...noss)}`)
+                console.log(`Min is : ${Math.min(...noss)}`)
+
+
+                
+
+                
+            }
+        )
+
+        
+        
+    </script>
+</body>
+</html>
