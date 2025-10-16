@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+    <script>
+        const friend = {
+            name: "Charlie Brown",
+            birthDate: "1950-10-02" // YYYY-MM-DD format
+            }
+        getBirthdayDetails(friend)
+
+        function getBirthdayDetails(friend_obj){
+            //convert birth date string into a date
+            var date_conv = new Date(friend_obj.birthDate)
+            console.log(date_conv)
+
+            //Extracts and prints the year, month name, and day of the month
+            var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+            var year = (date_conv).getFullYear()
+            var month = months[(date_conv).getMonth()]
+            var day = (date_conv).getDate()
+            console.log(`${day} / ${month} / ${year}`)
+
+            //Calculates how many years old the friend is as of today.
+            var today = new Date()
+            var age = today.getFullYear() - year
+            // console.log(`Age of ${friend_obj.name} : ${age}`)
+
+            // Display the result in the format:
+            //  "John was born on 5 July, 1999 and is 25 years old."
+
+            console.log(`${friend_obj.name} was born on ${day} ${month}, ${year} and is ${age} years old.`)
+            
+        }
+    </script>
+</body>
+</html>

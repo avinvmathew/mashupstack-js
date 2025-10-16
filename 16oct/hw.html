@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+    <!-- Create a simple web-based event reminder tool. The page should take a user's input of a past date (for example, their last birthday) and display:
+        The year, month (name, not number), and day of that date.
+        How many full years have passed since that date.
+        A custom message that says:
+        “It has been more than a year since that date.”
+        or “It has been less than a year since that date.” -->
+
+        <input id="inp1" type="text" placeholder="Enter a past date">
+        <button id="b1" type="button" onclick="subb()">Submit</button>
+        <script>
+            const inputt = document.getElementById("inp1")
+            var date1
+
+
+            
+
+            function subb() {
+                date1 = inputt.value
+                console.log(date1)
+
+                var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                var date_conv = new Date(date1)
+                var year = (date_conv).getFullYear()
+                var month = months[(date_conv).getMonth()]
+                var day = (date_conv).getDate()
+                console.log(`${day} / ${month} / ${year}`)
+
+                var now = new Date()
+                var years = now.getFullYear() - year
+                console.log(`It has been more than ${years} years since that date.`)
+            }
+
+
+
+        </script>
+</body>
+</html>
