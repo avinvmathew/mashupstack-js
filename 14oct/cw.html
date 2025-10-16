@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+
+    <!-- You are helping design a simple product listing feature for an online grocery store. You have an array of product names and an array of their prices. Your tasks are:
+
+Merge the product names and prices into one array in the format: "Product: Apple - Price: 50"
+
+Display all product entries using a loop.
+
+Filter and show only the products with prices greater than 50.
+
+Add a new product "Watermelon" with price 80 to the list, and then display the updated product list. -->
+    <script>
+        var arr_pd = ["Apple","Mango","Grapes","Pear"]
+        var arr_pr = [100,80,90,20] 
+
+        arr_pd = arr_pd.concat("Watermelon")
+        arr_pr = arr_pr.concat(80)
+
+        var new_arr = arr_pd.map(myfunction)
+        // console.log(new_arr)
+        var stri=""
+        var pr = new_arr.forEach(myfun2)
+        console.log(stri)
+
+        stri="Products with prices greater than 50"
+        pr=arr_pr.filter(myfun3)
+        console.log(stri)
+
+        function myfunction(value,index)
+        {
+            return `Product: ${value} - Price: ${arr_pr[index]}`
+        }
+        function myfun2(value)
+        {
+            stri = stri + value + "\n"
+        }
+        function myfun3(value,index)
+        {
+            if (value > 50)
+            {
+                stri = stri + "\n" + arr_pd[index] + " - " + value
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
