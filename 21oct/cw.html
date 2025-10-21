@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork-comment section checking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body class="bg-warning">
+
+    <!-- You are helping with a basic user comment system for a website. Your task is to write JavaScript code that 
+    does the following:
+    Check if a user comment contains any digits (like ages, amounts, or phone numbers).
+    If digits are found, replace them with the word "NUMBER" (case-insensitive and for all matches).
+    Return both:
+    Whether a number was found (true/false)
+    The updated comment with numbers replaced
+    Test the code using this comment:
+    "My son is 12 years old. Our flat number is 45 and contact is 9876543210." -->
+
+
+    <div class="row text-center">
+        <h1>Comments ?</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="mb-3 w-50">
+            <label for="Textarea1" class="form-label">Comment section</label>
+            <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" onclick="submitfn()">Submit</button>
+        </div>
+    </div>
+    <div class="row text-center">
+        <h1>Answer : <span id="ans"></span></h1>
+    </div>
+    <script>
+        function submitfn(){
+            var comment_str = document.getElementById("Textarea1").value
+            console.log(`${comment_str}`)
+            var num_patt = /[0-9]+/g
+            var num_match = num_patt.test(comment_str)
+            if(num_match)
+            {
+                console.log("Comment contains digits!")
+                var replaced_comment = comment_str.replace(num_patt,"NUMBER ")
+                console.log(replaced_comment)
+                document.getElementById("ans").innerHTML = replaced_comment
+            }
+            else{
+                console.log("Comment does not contain digits")
+            }
+
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
