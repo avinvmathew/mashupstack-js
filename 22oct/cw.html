@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- You have some information from a user in JSON format, including their name, email, and message. Your job is to:
+    Convert this JSON text into a JavaScript object.
+    Write a named arrow function that tries to print "Message received from <name>".
+    If something goes wrong (like the JSON is broken), show an error message.
+    Run the function to show the result in the console. -->
+
+    <script>
+        const jsonString = '{"name": "Kevin", "email": "kevincookiesyt@gmail.com", "message": "Hello there"}';
+
+        // const jsonString = '{"name": "Kevin, "email": "kevincookiesyt@gmail.com", "message": "Hello there"}';
+
+        logger = () =>{
+            var conv = JSON.parse(jsonString)
+
+            console.log(conv.name)
+        }
+        try{
+            logger()
+        }
+        catch(err){
+            console.log(`Invalid json -> ${err.message}`)
+        }
+
+    </script>
+</body>
+</html>
