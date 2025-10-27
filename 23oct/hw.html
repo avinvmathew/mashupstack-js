@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW- Book info</title>
+</head>
+<body>
+
+<!-- You are building a basic user system. Each user has a name, age, and email. Your task is to:
+Create a User class that stores these values.
+Use getter methods to access name and age.
+Use a setter method to safely update the email (only allow setting if the email contains an @ symbol).
+Use the this keyword correctly in all functions.
+Create an object from the class, try updating the email using both a correct and incorrect format, and print out all 
+the user details using getter methods. -->
+
+
+
+    <script>
+        class Users{
+            constructor(name,age,email){
+                this.name = name
+                this.age = age
+                this.email = email
+            }
+
+            get display(){
+                return `Name : ${this.name} \n Age : ${this.age} \n Email : ${this.email}`
+            }
+
+            set updateEmail(new_email){
+
+                var email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+                if(email_pattern.test(new_email)){
+                    this.email = new_email
+                }
+                else{
+                    console.log(`${new_email} is an invalid email (eg : abcd@ghn.xyz)`)
+                }
+            }
+        }
+
+        newMail = new Users("J. K. Simmons", 50, "joerab@gmail.com")
+
+        console.log(newMail.display)
+        console.log(newMail.updateEmail = "john@gmail.com")
+        console.log(newMail.updateEmail = "joh,/@@diodi")
+        console.log(newMail.display)
+    </script>
+</body>
+</html>
