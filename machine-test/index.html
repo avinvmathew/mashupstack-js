@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator - Frontend Exam JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center bg-black">
+            <div class="col-md-6 p-3 text-danger">
+                <h2>Calcoolaatorrr😎</h2>
+                <form id="calculator">
+                    <div class="mb-3">
+                        <label for="operand1" class="form-label">Operand 1</label>
+                        <input type="number" class="form-control w-50" id="operand1" aria-describedby="numHelp">
+                        <div id="emailHelp" class="form-text text-light">Enter 1st number</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="operand2" class="form-label">Operand 2</label>
+                        <input type="number" class="form-control w-50" id="operand2" aria-describedby="numHelp">
+                        <div id="emailHelp" class="form-text text-light">Enter 2nd number</div>
+                    </div>
+                    <div class="dropdown open">
+                        <a
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span id="selectedOp">OPERATOR</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="triggerId">
+                            <a class="dropdown-item" href="#" data-op="+">+ (ADD)</a>
+                            <a class="dropdown-item" href="#" data-op="-">- (SUBTRACT)</a>
+                            <a class="dropdown-item" href="#" data-op="*">* (MULTIPLY)</a>
+                            <a class="dropdown-item" href="#" data-op="/">/ (DIVIDE)</a>
+                        </div>
+                    </div><br>
+                    
+
+                    <button type="submit" class="btn btn-primary">Calculate (=)</button>
+                </form>
+            </div>
+            <div class="col-md-6 bg-danger d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <h1>Answer : <span id="answer">???</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        const form = document.getElementById("calculator")
+        const dropdown_item = document.querySelectorAll(".dropdown-item")
+        const selectedOp = document.getElementById("selectedOp")
+        const answer = document.getElementById("answer")
+
+        var operator
+
+        dropdown_item.forEach((item) => {
+            item.addEventListener('click', function(event){
+                event.preventDefault()
+                operator = this.getAttribute("data-op")
+                selectedOp.style.color = "red"
+                selectedOp.style.fontSize ="2rem"
+                selectedOp.textContent = operator
+            })
+        })
+
+        addition = (n1,n2) => n1 + n2
+        subtraction = (n1,n2) => n1 - n2
+        multiplication = (n1,n2) => n1 * n2
+        division = (n1,n2) => n1 / n2
+        
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault()
+
+            const num1 = Number(document.getElementById("operand1").value)
+            const num2 = Number(document.getElementById("operand2").value)
+
+            // console.log(`${num2}\n ${typeof num2}`)
+            let ans
+            switch (operator) {
+                case '+':
+                    ans = addition(num1,num2)
+                    break;
+                case '-':
+                    ans = subtraction(num1,num2)
+                    break;
+                case '*':
+                    ans = multiplication(num1,num2)
+                    break;
+                case '/':
+                    ans = division(num1,num2)
+                    break;
+                default:
+                    console.log("function undefined!!")
+                    break;
+            }
+
+            answer.textContent = ans
+
+        })
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>

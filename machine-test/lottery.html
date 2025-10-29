@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 Lottery ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row text-center justify-content-center align-items-center g-2">
+            <div class="col-md-12 bg-success">
+                <h1>The winner is <span id="winner">______</span></h1>
+                <a
+                    name=""
+                    id="button1"
+                    class="btn btn-primary"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    >Button</a
+                >
+                
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Winner</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                winner is <span id="winner_modal"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        const lotterys = ["1A001","1A005","1W456","5E789"]
+        const randomNum = lotterys[Math.floor(Math.random() * lotterys.length)];
+
+        const winner = document.getElementById("winner")
+        const winner_modal = document.getElementById("winner_modal")
+
+
+        const button1 = document.getElementById("button1") 
+        button1.addEventListener('click', function(event){
+            event.preventDefault()
+            winner.style.color = "red"
+            winner.innerText = randomNum
+            winner_modal.innerText = randomNum
+
+            console.log("Winner is : "+ randomNum);
+
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
