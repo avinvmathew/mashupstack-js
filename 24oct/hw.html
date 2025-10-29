@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework</title>
+</head>
+<body>
+
+    <!-- Create a simple feedback web page that includes:
+    A form with:
+        A text input for the user's name
+        A textarea for their feedback
+    A submit button
+        When the form is submitted:
+    The input values (name and feedback) should display on the same page without refreshing.
+    A confirmation message (e.g., “Thanks for your feedback!”) should be shown in green.
+    After 5 seconds, the confirmation message should disappear automatically.
+    When the mouse hovers over the feedback display, the text should turn blue. When the mouse leaves, it 
+    should return to black. -->
+
+    <h1>Feedback</h1>
+
+    <form id="form1">
+        <label for="name">Enter your name : </label>
+        <input type="text" id="name"><br>
+
+        <label for="txt1">Enter feedback here : </label>
+        <textarea id="txt1"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Your name : <span id="name_d" class="displayr">???????</span></h3>
+    <h3>Your feedback : <span id="feedback_d" class="displayr">???????</span></h3>
+
+    <p id="confirmation_msg"></p>
+
+    <script>
+
+        const name_d = document.getElementById("name_d")
+        const feedback_d = document.getElementById("feedback_d")
+        const confirm_msg = document.getElementById("confirmation_msg")
+
+        const all_displays = document.querySelectorAll(".displayr")
+
+        form1.addEventListener('submit', function(event){
+
+            event.preventDefault()
+
+            const name = document.getElementById("name").value
+            const feedback = document.getElementById("txt1").value
+
+            name_d.innerText = name
+            feedback_d.innerText = feedback
+            confirm_msg.style.color = "green"
+            confirm_msg.innerHTML =  "<q> Thanks for your feedback! </q>"
+
+              setTimeout(() => {
+                clear_confirmation();
+            }, 5000);
+            
+        })
+
+        all_displays.forEach(disp => {
+            disp.addEventListener('mouseover',function(){
+                disp.style.color = "blue"
+            })
+
+            disp.addEventListener('mouseout',function(){
+                disp.style.color = "black"
+            })
+        })
+
+        clear_confirmation = () =>{
+            confirm_msg.innerHTML = ""
+        }
+
+    </script>
+</body>
+</html>

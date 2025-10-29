@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+</head>
+<body>
+
+    <!-- Create a simple web page with a text box, a submit button, and a paragraph. 
+    When a user enters text and clicks the button:
+    The text should appear in the paragraph in blue color.
+    When the user hovers over the paragraph, the text should turn green.
+    When the user moves the mouse out of the paragraph, the text should turn back to blue.
+    Use a form and prevent the page from reloading when the button is clicked. -->
+
+
+    <form id="myform">
+        <label for="tb1">Enter text here</label>
+        <textarea name="" id="tb1"></textarea><br><br>
+
+        <button type="submit" onclick="display_text()">Submit</button>
+
+        <p id="disp1">Paragraph here ->>>>>>>>>></p>
+    </form>
+
+    <script>
+
+        const form = document.getElementById("myform")
+        const disp1 = document.getElementById("disp1")
+        form.addEventListener("submit", function(event){
+
+            event.preventDefault()
+            
+            let txt = document.getElementById("tb1").value
+
+            disp1.innerText = txt
+            disp1.style.color = "blue"
+
+
+        });
+        disp1.addEventListener("mouseover", function(){
+            disp1.style.color = "green"
+        });
+
+        disp1.addEventListener("mouseout", function(){
+            disp1.style.color = "blue"
+        });
+
+    </script>
+</body>
+</html>
